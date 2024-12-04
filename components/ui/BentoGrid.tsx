@@ -11,6 +11,9 @@ import { cn } from "@/lib/utils";
 // import GridGlobe from "./GridGlobe";
 // import animationData from "@/data/confetti.json";
 import MagicButton from "./MagicButton";
+import { BackgroundGradient } from "./BackgroundGradient";
+import { Globe } from "./Globe";
+import { GridGlobe } from "./GridGlobe";
 
 export const BentoGrid = ({
   className,
@@ -67,7 +70,7 @@ export const BentoGridItem = ({
   };
 
   const handleCopy = () => {
-    const text = "hsu@jsmastery.pro";
+    const text = "alessandro.foresta.1997@outlook.com";
     navigator.clipboard.writeText(text);
     setCopied(true);
   };
@@ -113,10 +116,9 @@ export const BentoGridItem = ({
           )}
         </div>
         {id === 6 && (
-          // add background animation , remove the p tag
-          // <BackgroundGradientAnimation>
-          <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl"></div>
-          // </BackgroundGradientAnimation>
+          <BackgroundGradient>
+            <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl"></div>
+          </BackgroundGradient>
         )}
 
         <div
@@ -125,20 +127,17 @@ export const BentoGridItem = ({
             "group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10"
           )}
         >
-          {/* change the order of the title and des, font-extralight, remove text-xs text-neutral-600 dark:text-neutral-300 , change the text-color */}
           <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10">
             {description}
           </div>
-          {/* add text-3xl max-w-96 , remove text-neutral-600 dark:text-neutral-300*/}
-          {/* remove mb-2 mt-2 */}
+
           <div
             className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-10`}
           >
             {title}
           </div>
 
-          {/* for the github 3d globe */}
-          {/* {id === 2 && <GridGlobe />} */}
+          {id === 2 && <GridGlobe />}
 
           {/* Tech stack list div */}
           {id === 3 && (
