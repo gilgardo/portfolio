@@ -119,23 +119,18 @@ export function Globe({ globeConfig, data }: WorldProps) {
   }, [data, defaultProps, globeConfig]);
 
   useEffect(() => {
-    let i = -1;
     const startAnimation = () => {
       if (!globeRef.current || !globeData) return;
       if (!validateData(data)) return;
       globeRef.current
         .arcsData(data)
         .arcStartLat((d) => {
-          i++;
-          console.log(d, i);
           return (d as Position).startLat || 0;
         })
         .arcStartLng((d) => (d as Position).startLng || 0)
         .arcEndLat((d) => (d as Position).endLat || 0)
         .arcEndLng((d) => (d as Position).endLng || 0)
-        .arcColor(
-          (globeRef.current?.ringsData()[0] as Position)?.color || "#ffffff"
-        )
+        .arcColor((e) => e.color || "#ffffff")
         .arcAltitude((d) => {
           return (d as Position).arcAlt * 1;
         })
