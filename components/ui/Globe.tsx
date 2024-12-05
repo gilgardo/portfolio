@@ -119,27 +119,33 @@ export function Globe({ globeConfig, data }: WorldProps) {
   }, [data, defaultProps, globeConfig]);
 
   useEffect(() => {
+    let i = -1;
     const startAnimation = () => {
       if (!globeRef.current || !globeData) return;
       if (!validateData(data)) return;
-      if (!typeof data)
-        globeRef.current
-          .arcsData(data)
-          .arcStartLat((d) => (d as Position).startLat || 0)
-          .arcStartLng((d) => (d as Position).startLng || 0)
-          .arcEndLat((d) => (d as Position).endLat || 0)
-          .arcEndLng((d) => (d as Position).endLng || 0)
-          .arcColor((d) => d.color || "#ffffff")
-          .arcAltitude((d) => {
-            return (d as Position).arcAlt * 1;
-          })
-          .arcStroke(() => {
-            return [0.32, 0.28, 0.3][Math.round(Math.random() * 2)];
-          })
-          .arcDashLength(defaultProps.arcLength)
-          .arcDashInitialGap((e) => (e as Position).order * 1)
-          .arcDashGap(15)
-          .arcDashAnimateTime(() => defaultProps.arcTime);
+      globeRef.current
+        .arcsData(data)
+        .arcStartLat((d) => {
+          i++;
+          console.log(d, i);
+          return (d as Position).startLat || 0;
+        })
+        .arcStartLng((d) => (d as Position).startLng || 0)
+        .arcEndLat((d) => (d as Position).endLat || 0)
+        .arcEndLng((d) => (d as Position).endLng || 0)
+        .arcColor(
+          (globeRef.current?.ringsData()[0] as Position)?.color || "#ffffff"
+        )
+        .arcAltitude((d) => {
+          return (d as Position).arcAlt * 1;
+        })
+        .arcStroke(() => {
+          return [0.32, 0.28, 0.3][Math.round(Math.random() * 2)];
+        })
+        .arcDashLength(defaultProps.arcLength)
+        .arcDashInitialGap((e) => (e as Position).order * 1)
+        .arcDashGap(15)
+        .arcDashAnimateTime(() => defaultProps.arcTime);
 
       globeRef.current
         .pointsData(data)
@@ -152,9 +158,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
 
       globeRef.current
         .ringsData([] as GlobalData[])
-        .ringColor((t: number) =>
-          (globeRef.current?.ringsData()[0] as GlobalData).color(t)
-        )
+        .ringColor((e: GlobalData) => (t: number) => e.color(t))
         .ringMaxRadius(defaultProps.maxRings)
         .ringPropagationSpeed(RING_PROPAGATION_SPEED)
         .ringRepeatPeriod(
