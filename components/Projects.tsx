@@ -11,7 +11,7 @@ const PinContainer = dynamic(
 
 const Projects = () => {
   return (
-    <div className="py-20">
+    <div className="py-20" id="projects">
       <h1 className="heading">
         A list of my <span className="text-purple">Projects</span>
       </h1>
