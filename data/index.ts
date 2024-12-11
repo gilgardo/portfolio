@@ -1,3 +1,5 @@
+import { Approach } from "@/types/approach";
+
 export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
@@ -216,41 +218,49 @@ export const socialMedia = [
   },
 ];
 
-export const approachPhases = [
+export const approachPhases: Approach[] = [
   {
-    title: "phase 1",
+    title: "Ideation",
     order: 1,
     containerClassName: "bg-emerald",
     colors: [
       [236, 72, 153],
       [232, 121, 249],
     ],
+    description:
+      "Brainstorming and conceptualizing the core idea of the project.",
   },
   {
-    title: "phase 2",
+    title: "Planning",
     order: 2,
     containerClassName: "bg-teal",
     colors: [
       [34, 197, 94],
       [16, 185, 129],
     ],
+    description:
+      "Organizing tasks, setting milestones, and creating a roadmap for execution.",
   },
   {
-    title: "phase 3",
+    title: "Execution",
     order: 3,
     containerClassName: "bg-indigo",
     colors: [
       [79, 70, 229],
       [165, 132, 240],
     ],
+    description:
+      "Developing and implementing the project according to the plan.",
   },
   {
-    title: "phase 4",
+    title: "Review",
     order: 4,
     containerClassName: "bg-rose",
     colors: [
       [244, 63, 94],
       [251, 113, 133],
     ],
+    description:
+      "Analyzing the outcomes and gathering feedback for improvement.",
   },
 ];
