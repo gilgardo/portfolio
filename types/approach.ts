@@ -1,7 +1,7 @@
 export type Approach = {
   title: string;
   order: number;
-  containerClassName: string;
+  bgColor: string;
   description: string;
-  colors?: number[][];
+  colors: number[][];
 };

@@ -222,7 +222,7 @@ export const approachPhases: Approach[] = [
   {
     title: "Ideation",
     order: 1,
-    containerClassName: "bg-emerald",
+    bgColor: "bg-emerald",
     colors: [
       [236, 72, 153],
       [232, 121, 249],
@@ -233,7 +233,7 @@ export const approachPhases: Approach[] = [
   {
     title: "Planning",
     order: 2,
-    containerClassName: "bg-teal",
+    bgColor: "bg-teal",
     colors: [
       [34, 197, 94],
       [16, 185, 129],
@@ -244,7 +244,7 @@ export const approachPhases: Approach[] = [
   {
     title: "Execution",
     order: 3,
-    containerClassName: "bg-indigo",
+    bgColor: "bg-indigo",
     colors: [
       [79, 70, 229],
       [165, 132, 240],
@@ -255,7 +255,7 @@ export const approachPhases: Approach[] = [
   {
     title: "Review",
     order: 4,
-    containerClassName: "bg-rose",
+    bgColor: "bg-red",
     colors: [
       [244, 63, 94],
       [251, 113, 133],

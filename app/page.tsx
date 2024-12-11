@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Grid from "@/components/Grid";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
@@ -18,6 +19,7 @@ export default function Home() {
         <Grid />
         <Projects />
         <MyApproach />
+        <Footer />
       </div>
     </main>
   );
