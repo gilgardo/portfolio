@@ -215,3 +215,42 @@ export const socialMedia = [
     img: "/link.svg",
   },
 ];
+
+export const approachPhases = [
+  {
+    title: "phase 1",
+    order: 1,
+    containerClassName: "bg-emerald",
+    colors: [
+      [236, 72, 153],
+      [232, 121, 249],
+    ],
+  },
+  {
+    title: "phase 2",
+    order: 2,
+    containerClassName: "bg-teal",
+    colors: [
+      [34, 197, 94],
+      [16, 185, 129],
+    ],
+  },
+  {
+    title: "phase 3",
+    order: 3,
+    containerClassName: "bg-indigo",
+    colors: [
+      [79, 70, 229],
+      [165, 132, 240],
+    ],
+  },
+  {
+    title: "phase 4",
+    order: 4,
+    containerClassName: "bg-rose",
+    colors: [
+      [244, 63, 94],
+      [251, 113, 133],
+    ],
+  },
+];

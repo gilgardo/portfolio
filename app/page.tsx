@@ -1,7 +1,7 @@
 import Grid from "@/components/Grid";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
-import Approach from "@/components/ui/Approach";
+import MyApproach from "@/components/ui/Approach";
 import { FloatingNav } from "@/components/ui/FloatingNavbar";
 import { navItems } from "@/data";
 
@@ -17,7 +17,7 @@ export default function Home() {
         <Hero />
         <Grid />
         <Projects />
-        <Approach />
+        <MyApproach />
       </div>
     </main>
   );

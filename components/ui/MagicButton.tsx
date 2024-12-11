@@ -4,21 +4,24 @@ const MagicButton = ({
   position,
   handleClick,
   className,
+  border,
 }: {
   text: string;
   icon?: React.ReactNode;
   position?: "left" | "right";
   handleClick?: () => void;
   className?: string;
+  border?: string;
 }) => {
   return (
     <button
       className="relative inline-flex h-12 w-full overflow-hidden 
-    rounded-lg p-[1px] focus:outline-none md:w-60 md:mt-10"
+    rounded-lg focus:outline-none md:w-60 md:mt-10"
+      style={{ padding: border ? `${border}px` : "1px" }}
       onClick={handleClick}
     >
       <span
-        className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] 
+        className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] border-4 
       bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]"
       />
       <span
